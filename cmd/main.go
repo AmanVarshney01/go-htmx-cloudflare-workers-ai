@@ -87,7 +87,6 @@ func main() {
 		if err != nil {
 			return err
 		}
-
 		return c.Render(http.StatusOK, "response", response.Result.Response)
 	})
 
