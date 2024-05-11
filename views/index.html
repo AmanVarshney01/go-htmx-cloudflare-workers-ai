@@ -12,9 +12,9 @@
     ></script>
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body class="antialiased bg-black text-white mx-auto max-w-6xl flex flex-col gap-4">
+  <body class="antialiased bg-black text-white mx-auto max-w-6xl flex flex-col gap-8 p-4">
     <div>
-      <h1 class="text-3xl font-medium">Golang-HTMX-Cloudflare Workers Ai</h1>
+      <h1 class="text-3xl font-medium">Go HTMX Tailwind Cloudflare Workers AI</h1>
     </div>
     <div class=" flex flex-col gap-4">
 
@@ -37,8 +37,8 @@
 {{ end }} 
 
 {{ block "prompt" . }}
-  <form class="flex flex-col gap-2" hx-post="/prompt" hx-target="#ai" hx-swap="innerHTML" hx-disabled-elt="textarea, button" hx-indicator="#indicator">
-    <textarea id="prompt" name="prompt" class="text-black rounded-lg p-2" placeholder="Ask me anything"></textarea>
+  <form class="flex flex-col gap-2" hx-post="/prompt" hx-target="#ai" hx-swap="innerHTML" hx-disabled-elt="input, button" hx-indicator="#indicator">
+    <input type="text" id="prompt" name="prompt" class="text-black rounded-lg p-2" placeholder="Ask me anything"></input>
     <button class="flex flex-row justify-center items-center rounded-lg bg-white px-4 py-2 text-black w-min disabled:opacity-75 disabled:animate-pulse">
       <span>Generate</span>
       <img id="indicator" class="htmx-indicator h-6 w-6 pl-2" src="../assets/loading.svg">
