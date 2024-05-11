@@ -1,0 +1,51 @@
+{{ block "index" .}}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://unpkg.com/htmx.org@1.9.12"
+      integrity="sha384-ujb1lZYygJmzgSwoxRggbCHcjc0rB2XoQrxeTUQyRjrOnlCoYta87iKBWq3EsdM2"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="antialiased bg-black text-white mx-auto max-w-6xl">
+    <!-- <div id="github">{{ template "github" . }}</div>
+    <button hx-get="/github" hx-target="#github">
+      Get Github
+    </button> -->
+    <div>
+      <h1 class="text-3xl font-medium">Golang-HTMX-Cloudflare Workers Ai</h1>
+    </div>
+    <div class=" flex flex-col gap-4">
+      <div id="ai">{{ template "ai" . }}</div>
+      <button class="flex flex-row justify-center items-center rounded-lg bg-white px-4 py-2 text-black w-min disabled:opacity-75 disabled:animate-pulse" hx-disabled-elt="this" hx-indicator="#indicator" hx-get="/ai" hx-target="#ai">
+        <span>Generate</span>
+        <img id="indicator" class="htmx-indicator h-6 w-6 pl-2" src="../assets/loading.svg">
+      </button>
+    </div>
+  </body>
+  <style>
+    .htmx-indicator{
+      display:none;
+    }
+    .htmx-request .htmx-indicator{
+      display:inline;
+    }
+    .htmx-request.htmx-indicator{
+      display:inline;
+    }
+  </style>
+</html>
+{{ end }} 
+<!-- 
+{{ block "github" . }}
+ {{ . }}
+{{ end }} -->
+
+{{ block "ai" .}}
+  {{ . }}
+{{ end }}
