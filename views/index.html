@@ -41,7 +41,7 @@
 
 {{ block "prompt" .}}
 <form class="flex flex-row gap-2" hx-post="/prompt" hx-target="#ai" hx-swap="outerHTML" hx-disabled-elt="input, button" hx-indicator="#indicator">
-  <input type="text" id="prompt" name="prompt" class="text-black rounded-lg p-2 w-full" placeholder="Ask me anything" required></input>
+  <input type="text" id="prompt" name="prompt" class="text-black rounded-lg p-2 w-full disabled:opacity-75 disabled:animate-pulse" placeholder="Ask me anything" required></input>
   <button class="flex flex-row justify-center items-center rounded-lg bg-white px-4 py-2 text-black w-min disabled:opacity-75 disabled:animate-pulse">
     Generate
     <img id="indicator" class="htmx-indicator h-6 w-6 pl-2" src="../assets/loading.svg">
