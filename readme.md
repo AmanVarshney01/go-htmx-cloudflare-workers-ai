@@ -13,6 +13,6 @@ cp .env.example .env
 air
 
 # Or using the standard Go run command
-go run cmd/main.go
+go run main.go
 ```
 ![screenshot](https://github.com/AmanVarshney01/go-htmx-cloudflare-workers-ai/assets/45312299/71854b0b-022a-4d9c-910c-ccc9fa71b344)
